@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only class="my_header_icon" (click)="goBack()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center class='myf_regular'>Comment on the post </ion-title>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+<form [formGroup]="commentData" (ngSubmit)="postComment()">
+<div margin>
+  <div class="input_div">
+    <p class='myft_regular'>write comment</p>
+    <div margin-top style="border:1px solid #dbdbdb">
+      <ion-textarea type="text" placeholder="140 characters max" class="myft_regular ion_input1" formControlName="content" no-padding style='height:60px;'></ion-textarea>
+    </div>
+  </div>
+</div>
+<p>&nbsp;</p>
+<div margin>
+    <button ion-button class="btn_save myf_regular" [disabled]="!commentData.valid">Post</button>
+</div>
+</form>
+</ion-content>

@@ -1,0 +1,63 @@
+page-sensei {
+	.masters {
+		background-color: #f2f2f2;
+  	}
+  	.dash_div {
+	    background-color: white;
+	    border-radius: 5px;
+	}
+	ion-avatar[item-start] {
+	    margin: 0px!important;
+	    margin-right: 16px!important;
+	}
+	.title {
+		color: #7a7a7a;
+		font-size: 14px;
+		margin-bottom: 6px!important;
+	}
+	.text {
+		color: black;
+		font-size: 14px;
+		margin-top: 6px!important;
+	}
+	.progress-outer {
+	    width: calc(100% - 52px);
+	    height: 10px;
+	    background-color: #DAD8D8;
+	    margin-top: 3px;
+	    border-radius: 20px;
+	    .progress-inner {
+			width: 70%;
+			height: 10px;
+			border-radius: 20px;
+			background-color: map-get($colors, primary);
+	    }
+	}
+	.third_row {
+	    height: 16px;
+	    margin-top: 30px;
+	    img {
+	      width: 16px;
+	      height: 16px;
+	    }
+	}
+	.z_p {
+		height: 30px;
+		img {
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+		}
+		span {
+			top: 20px;
+    		position: absolute;
+		}
+	}
+	.my_card {
+		box-shadow: none!important;
+		margin: 0px!important;
+	}
+	ion-card-content {
+		padding: 0px!important;
+	}
+}

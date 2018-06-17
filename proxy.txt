@@ -1,0 +1,6 @@
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://ec2-34-215-4-29.us-west-2.compute.amazonaws.com:8080/api"
+    }
+  ],

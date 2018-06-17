@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-title text-center class='myf_regular'>Edit other</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+  <div class='plus_div'>
+    <div margin class='myf_regular'>
+      Add other relevant details
+      <ion-icon name="ios-add-circle-outline" item-end></ion-icon>
+    </div>
+    <hr>
+  </div>
+  <div margin>
+    <div class="input_div">
+      <p class="myft_regular">Organization</p>
+      <div margin-top style="border:1px solid #dbdbdb">
+        <ion-input type="text" placeholder="E.g. Big brother, big sisters" value='{{affiliation.organization}}' class="myft_regular ion_input1"></ion-input>
+      </div>
+    </div>
+    <div class="input_div">
+      <p class="myft_regular">Activity / role</p>
+      <div margin-top style="border:1px solid #dbdbdb">
+        <ion-input type="text" placeholder="E.g. Mentoring" value='{{affiliation.role}}' class="myft_regular ion_input1"></ion-input>
+      </div>
+    </div>
+    <div class="input_div">
+      <p class="myft_regular">Focus area</p>
+      <div margin-top style="border:1px solid #dbdbdb">
+        <ion-input type="text" placeholder="E.g. Education" value='{{affiliation.focusArea}}' class="myft_regular ion_input1"></ion-input>
+      </div>
+    </div>
+    <ion-row>
+      <ion-col class='input_div input_div1'>
+        <p class="myft_regular">Start</p>
+        <div margin-top style="border:1px solid #dbdbdb">
+          <ion-input type="text" placeholder="Enter MM/YY" value='{{affiliation.startdate}}' class="myft_regular ion_input1"></ion-input>
+        </div>
+      </ion-col>
+      <ion-col class='input_div input_div2'>
+        <p class="myft_regular">Expected Grad</p>
+        <div margin-top style="border:1px solid #dbdbdb">
+          <ion-input type="text" placeholder="Enter MM/YY" value='{{affiliation.enddate}}' class="myft_regular ion_input1"></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class='input_div'>
+      </ion-col>
+      <ion-col class='input_div input_div2'>
+        <ion-item>
+          <ion-label class="myf_regular">Current</ion-label>
+          <ion-toggle color="secondary" checked="{{affiliation.isCurrent}}"></ion-toggle>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div margin>
+    <button ion-button class="btn_save myf_regular" (click)="goNext()">Save</button>
+  </div>
+  <div margin class="btn_delete myf_regular">
+    Delete
+  </div>
+</ion-content>

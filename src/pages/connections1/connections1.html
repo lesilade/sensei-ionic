@@ -1,0 +1,132 @@
+<ion-header no-border>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only class="leftImageIcon" (click)="goToMessage()">
+        <img src="./assets/icon/leftIcon.png" />
+      </button>
+    </ion-buttons>
+    <ion-searchbar class="my_search" placeholder="Search..." (click)="goToSearch()"></ion-searchbar>
+    <ion-buttons right>
+      <button ion-button icon-only class="rightImageIcon" (click)="goToProfile()">
+        <img src="./assets/icon/rightIcon.png" />
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class='masters'>
+<div>
+  <ion-segment [(ngModel)]="pet" (ionChange)="segmentChanged()">
+    <ion-segment-button value="connections">
+      Connections
+    </ion-segment-button>
+    <ion-segment-button value="following">
+      Following
+    </ion-segment-button>
+    <ion-segment-button value="followers">
+      Followers
+    </ion-segment-button>
+  </ion-segment>
+</div>
+<div [ngSwitch]="pet">
+  <ion-list *ngSwitchCase="'connections'">
+    <div padding class="seg_div">
+    </div>
+    <div margin-horizontal *ngFor="let con of coachingConnections; let i = index" class='div{{i}}'>
+    	<ion-item no-padding>
+  			<ion-avatar item-start>
+  				<img src="./assets/icon/img1.jpg">
+  			</ion-avatar>
+        <span class="myf_medium span_name"><div>{{con.firstName}} {{con.lastName}}</div><img src="./assets/icon/MORE1.png" class="imagestar4" (click)="showTooltip(i)"></span>
+  			<p class="imagestar5 myf_light">{{con.email}}</p>
+  			<!-- <p class="imagestar5 myf_light">{{con.login}}</p> -->
+  		</ion-item>
+  		<hr no-margin>
+    </div>
+  </ion-list>
+  <ion-list *ngSwitchCase="'following'">
+    <div padding class="seg_div myf_medium">
+    	Following {{following.length}} people
+    </div>
+    <div margin-horizontal *ngFor="let con of following; let i = index" class='div{{i}}'>
+    	<ion-item no-padding>
+  			<ion-avatar item-start>
+  				<img src="./assets/icon/img1.jpg">
+  			</ion-avatar>
+        <span class="myf_medium span_name"><div>{{con.firstName}} {{con.lastName}}</div><img src="./assets/icon/MORE1.png" class="imagestar4" (click)="showTooltip(i)"></span>
+  			<p class="imagestar5 myf_light">{{con.email}}</p>
+  			<!-- <p class="imagestar5 myf_light">{{con.user.login}}</p> -->
+  		</ion-item>
+  		<hr no-margin>
+    </div>
+  </ion-list>
+  <ion-list *ngSwitchCase="'followers'">
+    <div padding class="seg_div myf_medium">
+    	{{followers.length}}+ followers
+    </div>
+    <div margin-horizontal *ngFor="let con of followers; let i = index" class='div{{i}}'>
+    	<ion-item no-padding>
+  			<ion-avatar item-start>
+  				<img src="./assets/icon/img1.jpg">
+  			</ion-avatar>
+        <span class="myf_medium span_name"><div>{{con.firstName}} {{con.lastName}}</div><img src="./assets/icon/MORE1.png" class="imagestar4" (click)="showTooltip(i)"></span>
+  			<p class="imagestar5 myf_light">{{con.email}}</p>
+  			<!-- <p class="imagestar5 myf_light">{{con.user.login}}</p> -->
+  		</ion-item>
+  		<hr no-margin>
+    </div>
+  </ion-list>
+</div>
+<div class="tooltip tooltip_connections">
+	<button ion-item (click)="goToMessage()">
+    <img src="./assets/icon/tooltip1.png">
+    <span class='myf_regular'>Send Message</span>
+  </button>
+  <hr no-margin>
+  <button ion-item (click)="goToRequest()">
+    <img src="./assets/icon/tooltip2.png">
+    <span class='myf_regular'>Coach Request</span>
+  </button>
+</div>
+<div class="tooltip tooltip_following">
+	<button ion-item (click)="unfollow()">
+    <img src="./assets/icon/tooltip3.png">
+    <span class='myf_regular'>Unfollow</span>
+  </button>
+</div>
+<div class="tooltip tooltip_followers">
+	<button ion-item (click)="block()">
+    <img src="./assets/icon/tooltip4.png">
+    <span class='myf_regular'>Block</span>
+  </button>
+</div>
+</ion-content>
+<ion-footer>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goHome()">
+          <img src="./assets/icon/homeIcon1.png">
+          <p class='myf_regular'>Home</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToRequest()">
+          <img src="./assets/icon/requestIcon1.png">
+          <p class='myf_regular'>Request</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToDashboard()">
+          <img src="./assets/icon/dashboardIcon1.png">
+          <p class='myf_regular'>Dashboard</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn_act">
+          <img src="./assets/icon/connectionIcon.png">
+          <p class='myf_semibold'>Connections</p>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

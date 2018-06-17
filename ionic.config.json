@@ -1,0 +1,8 @@
+{
+  "name": "Sensei",
+  "app_id": "e7a790c9",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

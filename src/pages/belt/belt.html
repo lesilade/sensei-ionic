@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only class="my_header_icon" (click)="goBack()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center class='myf_regular'>Sensei </ion-title>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+  <div margin text-center>
+    <img class="imgbelt" src= "./assets/icon/Logo_Yellow.png">
+    <h2 no-margin class='myft_medium'>sensei</h2>
+    <span class='myft_regular'>Achieve mastery</span>
+    <br>
+    <br>
+    <span style="font-size:12px;" class='myft_regular'>See the meaning of the different belts and how to achieve them. Enjoy the path to enlightenment!</span>
+  </div>
+  <ion-row padding style="background-color: #FDCC11">
+    <ion-col col-2 no-padding>
+      <p no-padding no-margin class='myft_semibold'>Belt</p>
+    </ion-col>
+    <ion-col col-7 no-padding>
+      <p no-padding no-margin class='myft_semibold'> Description</p>
+    </ion-col>
+    <ion-col col-3 no-padding>
+      <p no-padding no-margin class='myft_semibold'>Attainment</p>
+    </ion-col>
+  </ion-row>
+  <div margin-left margin-right *ngFor="let belt of belts">
+    <ion-row padding-top padding-bottom>
+      <ion-col col-2 no-padding>
+        <img src="./assets/icon/star{{belt.id}}.png" width="32" height="32">
+      </ion-col>
+      <ion-col col-7 no-padding>
+        <p no-padding no-margin style="font-size:12px;color:#202020;" class='myft_regular'>{{belt.description}}</p>
+      </ion-col>
+      <ion-col col-3 no-padding>
+        <p no-padding no-margin style="font-size:12px;color:#202020;" class='myft_regular'>{{belt.attainment}}</p>
+      </ion-col>
+    </ion-row>
+    <hr no-margin>
+  </div>  
+</ion-content>

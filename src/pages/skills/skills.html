@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-title text-center class='myf_regular'>Skills </ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only class="my_header_icon" (click)="goToProfile()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+  <p>&nbsp;</p>
+  <form [formGroup]="skillData" (ngSubmit)="addSkill()">
+  <div margin text-center>
+    <h6 class='myf_medium'>What areas are you looking to coach people on?</h6>
+  </div>
+  <div margin style="border:1px solid #dbdbdb">
+    <ion-input type="text" placeholder="Enter skills" class='myf_regular' formControlName="name"></ion-input>
+  </div>
+</form>
+  <p>&nbsp;</p>
+  <ion-list *ngFor="let skill of userSkills; let i = index">
+    <ion-item class='my_item'>
+      <p class='myf_regular'>{{skill}}</p>
+      <ion-icon name="close" item-end (click)="removeSKill(skill,i)"></ion-icon>
+    </ion-item>
+    <hr class='my_hr'>
+  </ion-list>
+</ion-content>

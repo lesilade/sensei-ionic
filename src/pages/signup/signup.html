@@ -1,0 +1,21 @@
+<ion-content padding class="masters">
+  <img class="img_logo" src="./assets/icon/Logo_Yellow.png">
+  <div text-center class="label_sen myf_medium">
+    sensei
+  </div>
+  <div text-center class="label_achi myf_light">
+    achieve mastery
+  </div>
+  <button ion-button class="btn_facebook auth_btn">
+    <ion-icon name="logo-facebook"><span class='myf_regular'> Sign up with Facebook</span></ion-icon>  
+  </button>
+  <button ion-button class="btn_linked auth_btn">
+    <ion-icon name="logo-linkedin"><span class='myf_regular'> Sign up with LinkedIn</span></ion-icon>
+  </button>
+  <button ion-button class="btn_email auth_btn" (click)="goNext()">
+    <ion-icon name="mail"><span class='myf_regular'> Sign up with Email</span></ion-icon>
+  </button>
+  <button ion-button clear class="btn_close" (click)="goBack()">
+    <ion-icon name="ios-close-circle-outline"></ion-icon>
+  </button>
+</ion-content>

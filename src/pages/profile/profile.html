@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only class="my_header_icon" (click)="goBack()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center class='myf_regular'>Profile</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only class="my_header_icon" (click)="goToSettings()">
+        <ion-icon name="ios-settings-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+  <img src="./assets/icon/Layer1.png" class="profile_img"> 
+  <ion-card class='my_card first_card'>
+    <ion-card-content>
+      <ion-grid no-padding>
+        <ion-row class='first_row'>
+          <ion-col col-4 class='profile_batch'>
+            <img src="./assets/icon/batch1.png">
+          </ion-col>
+          <ion-col col-4>            
+          </ion-col>
+          <ion-col col-4 class='profile_edit'>
+            <img src="./assets/icon/edit1.png">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-center>
+              <ion-label no-margin style="font-size: 16px;" class='myf_medium'>
+                 {{user.firstName+' '+user.lastName}}
+              </ion-label>
+              <ion-label no-margin style="font-size: 12px;color:#B9B9B9" class='myf_regular'>
+                  Technology Editor at TechCrunch
+              </ion-label>
+              <ion-label no-margin style="font-size: 12px;color:#707070" class='myf_regular'>
+                  San Francisco, Callifornia
+              </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class='third_row'>
+          <img src="./assets/icon/star8.png" style="margin-right:10px;">
+          <div class="progress-outer">
+            <img src="./assets/icon/progressbar.png" class="progress-inner">
+          </div>
+          <img src="./assets/icon/star1.png" style="margin-left:10px;">
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class='my_card'>
+    <ion-card-header class='card_h myf_regular'>
+      Skill
+      <img src="./assets/icon/edit1.png" class="editimg" (click)="goToAddSkill()">
+      <hr>
+    </ion-card-header>
+    <ion-card-content class='card_c myf_regular'>
+      <p *ngFor="let skill of userSkills">{{skill.name}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class='my_card'>
+    <ion-card-header class='card_h myf_regular'>
+      Experience
+      <img src="./assets/icon/edit1.png" class="editimg" (click)="goToAddExperience()">
+      <hr>
+    </ion-card-header>
+    <ion-card-content class='card_c myf_regular'>
+      <p *ngFor="let experience of userExperience">{{experience.title}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class='my_card'>
+    <ion-card-header class='card_h myf_regular'>
+      Education
+      <img src="./assets/icon/edit1.png" class="editimg" (click)="goToAddeducationPage()">
+      <hr>
+    </ion-card-header>
+    <ion-card-content class='card_c myf_regular'>
+      <p *ngFor="let education of userEducation">{{education.school}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class='my_card'>
+    <ion-card-header class='card_h myf_regular'>
+      Affiliations
+      <img src="./assets/icon/edit1.png" class="editimg" (click)="goToAddotherPage()">
+      <hr>
+    </ion-card-header>
+    <ion-card-content class='card_c myf_regular'>
+      <p *ngFor="let affiliation of userAffiliation">{{affiliation.organization}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header no-border>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only class="leftImageIcon">
+        <img src="./assets/icon/msg_icon.png" />
+      </button>
+    </ion-buttons>
+    <ion-searchbar class="my_search" placeholder="Search messages..." (click)="goToSearch()"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+<ion-content class='masters'>
+  <div *ngFor="let msg of jason.messages; let i = index">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="span_name"><div class="myf_medium">{{msg.user.firstName}} {{msg.user.lastName}}</div><div style="font-size:14px!important;margin:2px 0px 0px auto;color:#707070!important;" class='myf_regular'>{{msg.sentdate}}</div></span>
+      <p style="white-space:normal;" class='myf_regular imagestar5'>{{msg.message}}</p>
+    </ion-item>
+    <hr class="my_hr">
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goHome()">
+          <img src="./assets/icon/homeIcon1.png">
+          <p class='myf_regular'>Home</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToRequest()">
+          <img src="./assets/icon/requestIcon1.png">
+          <p class='myf_regular'>Request</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToDashboard()">
+          <img src="./assets/icon/dashboardIcon1.png">
+          <p class='myf_regular'>Dashboard</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn_act" (click)="goToConnection()">
+          <img src="./assets/icon/connectionIcon.png">
+          <p class='myf_semibold'>Connections</p>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

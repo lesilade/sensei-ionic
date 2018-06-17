@@ -1,0 +1,66 @@
+<ion-header no-border>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons right>
+      <button ion-button navPop class="myft_regular right_p">Cancel</button>
+    </ion-buttons>
+    <ion-searchbar class="my_search"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+<ion-content class='masters'>
+  <div>
+    <ion-item style='margin-top:7px;'>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="span_name"><div class="myf_medium">Adam Kennedy</div><img src="./assets/icon/star2.png" class="imagestar3"></span>
+      <p class='myf_regular imagestar5'>Technology Editor at TechCrunch</p>
+    </ion-item>
+    <hr margin-horizontal>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="span_name"><div class="myf_medium">Adam Kennedy</div><img src="./assets/icon/star2.png" class="imagestar3"></span>
+      <p class='myf_regular imagestar5'>Technology Editor at TechCrunch</p>
+    </ion-item>
+    <hr margin-horizontal>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="span_name"><div class="myf_medium">Adam Kennedy</div><img src="./assets/icon/star2.png" class="imagestar3"></span>
+      <p class='myf_regular imagestar5'>Technology Editor at TechCrunch</p>
+    </ion-item>
+    <hr margin-horizontal>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goNext('Home1Page')">
+          <img src="./assets/icon/homeIcon1.png">
+          <p class='myf_regular'>Home</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goNext('RequestPage')">
+          <img src="./assets/icon/requestIcon1.png">
+          <p class='myf_regular'>Request</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goNext('Dashboard1Page')">
+          <img src="./assets/icon/dashboardIcon1.png">
+          <p class='myf_regular'>Dashboard</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goNext('Connections1Page')">
+          <img src="./assets/icon/connectionIcon1.png">
+          <p class='myf_regular'>Connections</p>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-title text-center class='myf_semibold'>Settings </ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only class="my_header_icon" (click)="goBack()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+  <div no-margin *ngFor="let item of items1" class='first_div'> 
+    <div>
+      <h6 no-margin style="color:#363636;" class='myf_medium'>{{item.title}}</h6>
+      <span style="color:#585858;" class='myf_light'>{{item.sub_title}}</span>
+    </div>
+    <hr style="margin:0px 16px;" [hidden]="item.title=='Feed preference'">
+  </div>
+  <div no-margin *ngFor="let item of items2" class='second_div' (click)="goNext(item)"> 
+    <div>
+      <h6 no-margin style="color:#363636;" class='myf_medium'>{{item.title}}</h6>
+    </div>
+    <hr style="margin:0px 16px;">
+  </div>
+</ion-content>

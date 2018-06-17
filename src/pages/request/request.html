@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only class="my_header_icon" (click)="goHome()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center class='myf_regular'>Request a coach </ion-title>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+<form [formGroup]="requestForm" (ngSubmit)="submitRequest()">
+<div margin>
+  <div class="input_div">
+    <p class='myft_regular'>What topic do you need a coach for?</p>
+    <div margin-top style="border:1px solid #dbdbdb">
+      <ion-input type="text" 
+      placeholder="e.g. Programming" 
+      class="myft_regular ion_input1" 
+      formControlName="topic"></ion-input>
+    </div>
+  </div>
+  <div class="input_div">
+    <p class='myft_regular'>Subtopic?</p>
+    <div margin-top style="border:1px solid #dbdbdb">
+      <ion-input type="text" 
+      placeholder="e.g. Consultant" 
+      class="myft_regular ion_input1"
+      formControlName="subtopic"></ion-input>
+    </div>
+  </div>
+  <div class="input_div">
+    <p class='myft_regular'>Which industry?</p>
+    <div margin-top style="border:1px solid #dbdbdb">
+      <ion-input type="text" 
+      placeholder="Automobile" 
+      class="myft_regular ion_input1"
+      formControlName="industry"></ion-input>
+    </div>
+  </div>
+  <div class="input_div">
+    <p class='myft_regular'>Briefly describe what you need coaching on?</p>
+    <div margin-top style="border:1px solid #dbdbdb">
+      <ion-textarea type="text" 
+      placeholder="140 characters max" 
+      class="myft_regular ion_input1" 
+      no-padding style='height:60px;'
+      formControlName="description"></ion-textarea>
+    </div>
+  </div>
+  <ion-item no-padding margin-top>
+    <ion-label style="font-size:14px;" class='myf_regular'>Do you need someone close by </ion-label>
+    <ion-toggle color="secondary" checked="true" formControlName="closeBy"></ion-toggle>
+  </ion-item>
+  <ion-item no-padding no-margin>
+    <ion-label style="font-size:14px;" class='myf_regular'>Looking for someone in your network? </ion-label>
+    <ion-toggle color="secondary" checked="true" formControlName="inNetwork"></ion-toggle>
+  </ion-item>
+  <div class="input_div">
+    <p no-margin margin-top class='myf_regular'>Timeframe</p>
+    <ion-range [(ngModel)]="brightness" min="1" max="3" formControlName="duration">
+      <ion-label range-left style="margin: 30px -38px -9px 0px;font-size:12px;" class='myf_regular'>1 week</ion-label>
+      <ion-label range-right style="margin: 30px -3px 0px -50px;font-size:12px;" class='myf_regular'>3 weeks</ion-label>
+    </ion-range>
+  </div>
+
+</div>
+<p>&nbsp;</p>
+<div margin>
+    <button ion-button class="btn_save myf_regular" [disabled]="!requestForm.valid">Submit</button>
+</div>
+</form>
+</ion-content>

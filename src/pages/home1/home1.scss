@@ -1,0 +1,106 @@
+page-home1 {
+  .masters {
+    background-color: #f2f2f2;
+  }
+  .card-md {
+    width: calc(100% - 32px);
+  }
+  .label-md {
+    margin: 0px;
+  }
+  ion-avatar[item-start] {
+    margin: 0px!important;
+    margin-right: 16px!important;
+    .logo {
+      border-radius: 0!important;
+      width: auto!important;
+      height: 50px!important;
+      float: left;
+    }   
+  }
+  .batch {
+    border-radius: 0!important;
+    width: 35px!important;
+    height: 35px!important;
+    margin-top: 3px;
+    min-height: 0px!important;
+    min-width: 0px!important;
+    img {
+      height: 35px!important;
+      width: auto!important;
+      border-radius: 0!important;
+    }
+  }
+  .logo_card {
+    border: 1px #ffcd00 solid;
+    box-shadow: none!important;
+  }
+  .batch_p {
+    font-size: 16px;
+    color: #202020;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal!important;
+    display: -webkit-box;
+    line-height: 18px;
+    max-height: 36px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    span {
+      color: #10a517;
+      font-size: 16px;
+    }
+  }
+  .batch_p2 {
+    font-size: 16px;
+    color: #202020;
+    margin-top: 10px;
+  }
+  .item-block {
+    width: auto!important;
+    .item-inner {
+      padding: 0px!important;
+    }
+  }  
+  .home_sub_div {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 6px 10px;
+  }
+  .trend_p {
+    margin: 6px;
+    display: flex;
+    img {
+      width: 16px;
+      height: 16px;
+      display: block;
+      margin-right: 4px;
+    }
+    div {
+      color: #202020!important;
+      font-size: 14px;
+    }
+  }
+  .trend_p1 {
+    margin: 8px 8px 0px 8px;
+    display: flex;
+    img {
+      width: 18px;
+      height: 18px;
+      display: block;
+      margin-left: 6px;
+    }
+    div {
+      color: #202020!important;
+      font-size: 16px;
+    }
+  }
+  .imagestar41 {
+    width: auto;
+    height: 20px!important;
+    margin-left: auto!important;
+  }
+  .trend_div {
+    overflow-y: overlay!important;
+    width: calc(100% - 28px);
+  }
+}

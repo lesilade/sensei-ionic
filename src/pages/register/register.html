@@ -1,0 +1,42 @@
+<ion-content class="masters">
+  <img class="img_logo" src="./assets/icon/Logo_Yellow.png">
+  <div text-center class="label_sen myf_medium">
+    sensei
+  </div>
+  <div text-center class="label_achi myf_light">
+    achieve mastery
+  </div>
+  <form [formGroup]="regData" (ngSubmit)="register()">
+  <ion-grid no-padding class='grid_signin'>
+    <ion-row class="signin-input-border">
+      <ion-col col-12>
+        <ion-input type="text" placeholder="First name" class='myf_regular' formControlName="firstName"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="signin-input-border">
+      <ion-col col-12>
+        <ion-input type="text" placeholder="Last name" class='myf_regular' formControlName="lastName"></ion-input>
+      </ion-col>
+    </ion-row>
+    <!--<ion-row class="signin-input-border">
+      <ion-col col-12>
+        <ion-input type="text" placeholder="Last name" class='myf_regular' formControlName="lastName"></ion-input>
+      </ion-col>
+    </ion-row>-->
+    <ion-row class="signin-input-border">
+      <ion-col col-12>
+        <ion-input type="email" placeholder="Email address" class='myf_regular' formControlName="email"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="signin-input-border border-bottom">
+      <ion-col col-12>
+        <ion-input type="password" placeholder="Password" class='myf_regular' formControlName="password"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <button ion-button class="btn_signin myf_regular" type="submit" [disabled]="!regData.valid">Join Now</button>
+  </form>
+    <button ion-button clear class="btn_close" (click)="goBack()">
+    <ion-icon name="ios-close-circle-outline"></ion-icon>
+  </button>
+</ion-content>

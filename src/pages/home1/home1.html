@@ -1,0 +1,434 @@
+<ion-header no-border>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only class="leftImageIcon" (click)="goToMessage()">
+        <img src="./assets/icon/leftIcon.png" />
+      </button>
+    </ion-buttons>
+    <ion-searchbar class="my_search" placeholder="Search..." (click)="goToSearch()"></ion-searchbar>
+    <ion-buttons right>
+      <button ion-button icon-only class="rightImageIcon" (click)="goToProfile()">
+        <img src="./assets/icon/rightIcon.png" />
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class='masters'>
+
+   <!-- Card section -->
+  <ion-card margin *ngFor="let feed of newsFeeds; let i = index; trackBy:trackByIndex;">
+    <ion-item margin no-padding>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div>{{feed.response.user.firstName}} {{feed.response.user.lastName}}</div><img src="./assets/icon/star{{feed.response.user.id}}.png" class="imagestar3"><img src="./assets/icon/MORE.png" class="imagestar4" (click)="goToNewsFeed()"></span>
+      <p class='myf_regular imagestar5'>{{feed.response.user.email}}</p>
+    </ion-item>
+    <hr>
+    <div margin>
+      <h4 class='myf_regular'>{{feed.response.title}}</h4>
+      <div margin-top margin-bottom>
+        <img src="./assets/icon/amazonimg.png">
+        <div class="home_sub_div">
+          <ion-item no-margin no-padding>
+            <p margin-right class='myf_light' style="color:#202020;">{{feed.response.content}}</p>
+            <button ion-button clear item-end style="float:right;padding:0px;margin:3px 0px auto 0px;" (click)="goBelt('BeltPage')"><img src="./assets/icon/Forma1_0.png" style="width:16px;"></button>
+            <a class='myf_light' style="color:#004eff;">See more...</a>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p margin-left class='myf_light like_p'>{{feed.response.likes.count}} likes <strong>&middot;</strong> {{feed.response.comment.length}} Comments</p>
+      <hr>
+      <ion-row text-center>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small (click)="saveLike(feed)">
+            <img src="./assets/icon/thumbsup.png" class="suggestionimg">
+            <div class="suggestion myf_light">Like</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small (click)="saveComment(feed)">
+            <img src="./assets/icon/comment.png" class="suggestionimg">
+            <div class="suggestion myf_light">Comment</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/share.png" class="suggestionimg">
+            <div class="suggestion myf_light">Share</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-card>
+
+   <!-- End Card section -->
+
+
+  <!-- <ion-card margin>
+    <ion-item margin no-padding>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div>Andrea Johnson</div><img src="./assets/icon/star4.png" class="imagestar3"><img src="./assets/icon/MORE.png" class="imagestar4"></span>
+      <p class='myf_regular imagestar5'>Program manager at Northrup Grumman</p>
+    </ion-item>
+    <hr>
+    <div margin>
+      <div class="home_sub_div">
+        <ion-item no-margin no-padding>
+          <ion-avatar item-start class="batch">
+            <img src="./assets/icon/batch2.png">
+          </ion-avatar>
+          <p margin-right class='myf_regular batch_p'>Andrea Johnson earned <span class='myf_medium'>GREEN</span> belt in coaching. Say congrats!</p>
+          <button ion-button clear item-end style="float:right;padding:0px;margin:3px 0px auto 0px;" (click)="goNext('BeltPage')"><img src="./assets/icon/Forma1_0.png" style="width:16px;"></button>
+        </ion-item>
+      </div>
+    </div>
+    <div>
+      <p margin-left class='myf_light like_p'>300 likes <strong>&middot;</strong> 15 Comments</p>
+      <hr>
+      <ion-row text-center>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/thumbsup.png" class="suggestionimg">
+            <div class="suggestion myf_light">Like</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/comment.png" class="suggestionimg">
+            <div class="suggestion myf_light">Comment</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/share.png" class="suggestionimg">
+            <div class="suggestion myf_light">Share</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-card> -->
+   <!-- End Card section -->
+
+
+
+  <!-- <ion-card margin>
+    <ion-item margin no-padding>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div>James Muriel</div><img src="./assets/icon/star0.png" class="imagestar3"><img src="./assets/icon/MORE.png" class="imagestar4"></span>
+      <p class='myf_regular imagestar5'>Ph. D. Student at Carnegie Mellon University</p>
+    </ion-item>
+    <hr>
+    <div margin>
+      <div class="home_sub_div">
+        <ion-item no-margin no-padding>
+          <ion-avatar item-start class="batch">
+            <img src="./assets/icon/Vase.png">
+          </ion-avatar>
+          <p margin-right class='myf_regular batch_p2'>James Muriel started a coaching session on</p>
+          <p margin-right class='myf_regular batch_p1'>Academic Research.</p>
+          <button ion-button clear item-end style="float:right;padding:0px;margin:3px 0px auto 0px;" (click)="goNext('BeltPage')"><img src="./assets/icon/Forma1_0.png" style="width:16px;"></button>
+        </ion-item>
+      </div>
+    </div>
+    <div>
+      <p margin-left class='myf_light like_p'>300 likes <strong>&middot;</strong> 15 Comments</p>
+      <hr>
+      <ion-row text-center>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/thumbsup.png" class="suggestionimg">
+            <div class="suggestion myf_light">Like</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/comment.png" class="suggestionimg">
+            <div class="suggestion myf_light">Comment</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/share.png" class="suggestionimg">
+            <div class="suggestion myf_light">Share</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-card> -->
+   <!-- End Card section -->
+
+
+  <!-- <ion-card margin>
+    <ion-item margin no-padding>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div>Huang Lee</div><img src="./assets/icon/star2.png" class="imagestar3"><img src="./assets/icon/MORE.png" class="imagestar4"></span>
+      <p class='myf_regular imagestar5'>Software programmer at Microsoft</p>
+    </ion-item>
+    <hr>
+    <div margin>
+      <div class="home_sub_div">
+        <ion-item no-margin no-padding>
+          <ion-avatar item-start class="batch">
+            <img src="./assets/icon/star1.png">
+          </ion-avatar>
+          <p margin-right class='myf_regular batch_p2'>Huang Lee is coaching .NET programming on</p>
+          <p margin-right class='myf_regular batch_p1'>Programming.</p>
+        </ion-item>
+      </div>
+    </div>
+    <div>
+      <p margin-left class='myf_light like_p'>300 likes <strong>&middot;</strong> 15 Comments</p>
+      <hr>
+      <ion-row text-center>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/thumbsup.png" class="suggestionimg">
+            <div class="suggestion myf_light">Like</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/comment.png" class="suggestionimg">
+            <div class="suggestion myf_light">Comment</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/share.png" class="suggestionimg">
+            <div class="suggestion myf_light">Share</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-card> -->
+   <!-- End Card section -->
+
+  
+  <!-- <ion-card margin>
+    <ion-item margin no-padding>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div>Arun Kathik M.D.</div><img src="./assets/icon/star3.png" class="imagestar3"><img src="./assets/icon/MORE.png" class="imagestar4"></span>
+      <p class='myf_regular imagestar5'>Residency at Houston Medical Centre</p>
+    </ion-item>
+    <hr>
+    <div margin>
+      <ion-item no-margin no-padding>
+        <ion-avatar item-start>
+          <img src="./assets/icon/Bulb.png" class="batch">
+        </ion-avatar>
+        <p margin-right class='myf_regular batch_p'>Creating a nutrition plan that fits your health goals and lifestyle</p>
+      </ion-item>
+      <div margin-top margin-bottom>
+        <img src="./assets/icon/amazonimg1.png">
+        <div class="home_sub_div">
+          <ion-item no-margin no-padding>
+            <p margin-right class='myf_light' style="color:#202020;">Amazon Web Services (AWS) is the top player in providing</p>
+            <button ion-button clear item-end style="float:right;padding:0px;margin:3px 0px auto 0px;" (click)="goNext('BeltPage')"><img src="./assets/icon/Forma1_0.png" style="width:16px;"></button>
+            <a class='myf_light' style="color:#004eff;">See more...</a>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p margin-left class='myf_light like_p'>300 likes <strong>&middot;</strong> 15 Comments</p>
+      <hr>
+      <ion-row text-center>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/thumbsup.png" class="suggestionimg">
+            <div class="suggestion myf_light">Like</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/comment.png" class="suggestionimg">
+            <div class="suggestion myf_light">Comment</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/share.png" class="suggestionimg">
+            <div class="suggestion myf_light">Share</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>    
+  </ion-card> -->
+   <!-- End Card section -->
+
+
+   
+  <!-- <ion-card margin class='logo_card'>
+    <ion-item margin no-padding>
+      <ion-avatar item-start>
+        <img src="./assets/icon/logo.png" class="logo">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div>Udemy.com</div><img src="./assets/icon/MORE.png" class="imagestar4"></span>
+      <p class='myf_regular imagestar5'>Promoted</p>
+    </ion-item>
+    <hr>
+    <div margin class='myf_regular' style="font-size:16px;">
+      Udemy is the world's largest destination for online courses. Discover an online course and start learning a new skill today
+    </div>
+  </ion-card> -->
+ <!-- End Card section -->
+
+
+
+  <!-- <ion-card margin>
+    <ion-item margin no-padding>
+      <ion-avatar item-start style='margin-bottom:auto!important;'>
+        <img src="./assets/icon/Trending.png">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div class="trend_div">Trending topics within your network</div><img src="./assets/icon/MORE.png" class="imagestar4"></span>
+      <span class='myf_regular trend_p'><img src="./assets/icon/check.png"><div>Entrepreneurship</div></span>
+      <span class='myf_regular trend_p'><img src="./assets/icon/check.png"><div>Data Analytics</div></span>
+      <span class='myf_regular trend_p'><img src="./assets/icon/check.png"><div>Gardening</div></span>
+      <span class='myf_semibold trend_p1'><div>Connect with a Coach!</div><img src="./assets/icon/connet.png"></span>
+    </ion-item>
+  </ion-card> -->
+   <!-- End Card section -->
+
+
+
+  <!-- <ion-card margin>
+    <ion-item margin no-padding>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div>Sean “Diddy” Combs</div><img src="./assets/icon/star7.png" class="imagestar3"><img src="./assets/icon/plus.png" class="imagestar41"></span>
+      <p class='myf_regular imagestar5'>Father. Artist. Producer. Actor. Entrepreneur. Philantropist</p>
+    </ion-item>
+    <hr>
+    <div margin>
+      <div class="home_sub_div">
+        <ion-item no-margin no-padding>
+          <ion-avatar item-start>
+            <img src="./assets/icon/Play.png" class="batch">
+          </ion-avatar>
+          <p class='myf_regular batch_p'>Sean “Diddy” Combs is hosting a live session on Entrepreneurship in 35 mins</p>
+          <p class='myf_regular batch_p2'>Join the conversation!</p>
+        </ion-item>
+      </div>
+    </div>
+    <div>
+      <p margin-left class='myf_light like_p'>25 likes <strong>&middot;</strong> 5 Comments</p>
+      <hr>
+      <ion-row text-center>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/thumbsup.png" class="suggestionimg">
+            <div class="suggestion myf_light">Like</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/comment.png" class="suggestionimg">
+            <div class="suggestion myf_light">Comment</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/share.png" class="suggestionimg">
+            <div class="suggestion myf_light">Share</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-card> -->
+   <!-- End Card section -->
+
+
+ <!-- Card section -->
+  <!-- <ion-card margin>
+    <ion-item margin no-padding>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div>Katie Holmes Esq.</div><img src="./assets/icon/star6.png" class="imagestar3"><img src="./assets/icon/plus.png" class="imagestar41"></span>
+      <p class='myf_regular imagestar5'>Partner at Barnes, Cairn and Holmes Partners</p>
+    </ion-item>
+    <hr>
+    <div margin>
+      <div class="home_sub_div">
+        <ion-item no-margin no-padding>
+          <ion-avatar item-start>
+            <img src="./assets/icon/Play.png" class="batch">
+          </ion-avatar>
+          <p class='myf_regular batch_p'>Sean “Diddy” Combs is hosting a live session on Entrepreneurship in 35 mins</p>
+          <p class='myf_regular batch_p2'>Join the conversation!</p>
+        </ion-item>
+      </div>
+    </div>
+    <div>
+      <p margin-left class='myf_light like_p'>25 likes <strong>&middot;</strong> 5 Comments</p>
+      <hr>
+      <ion-row text-center>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/thumbsup.png" class="suggestionimg">
+            <div class="suggestion myf_light">Like</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small>
+            <img src="./assets/icon/comment.png" class="suggestionimg">
+            <div class="suggestion myf_light">Comment</div>
+          </button>
+        </ion-col>
+        <ion-col no-padding style='padding-bottom:4px;'>
+          <button ion-button icon-left clear small> 
+            <img src="./assets/icon/share.png" class="suggestionimg">
+            <div class="suggestion myf_light">Share</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-card> -->
+
+  <!-- End Card section -->
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        <a class="has-title has-icon footer_btn_act">
+          <img src="./assets/icon/homeIcon.png">
+          <p class='myf_semibold'>Home</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToRequest()">
+          <img src="./assets/icon/requestIcon1.png">
+          <p class='myf_regular'>Request</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToDashboard()">
+          <img src="./assets/icon/dashboardIcon1.png">
+          <p class='myf_regular'>Dashboard</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToConnection()">
+          <img src="./assets/icon/connectionIcon1.png">
+          <p class='myf_regular'>Connections</p>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

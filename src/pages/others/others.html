@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-title text-center class='myf_regular'>Other</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only class="my_header_icon" (click)="goBack()">
+        <ion-icon  md="ios-arrow-dropleft"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+  <div class='plus_div'>
+    <div margin class='myf_regular'>
+      Add other relevant details
+      <ion-icon name="ios-add-circle-outline" item-end></ion-icon>
+    </div>
+    <hr>
+  </div>
+  <ion-list no-margin *ngFor="let other of others; let i = index">
+    <ion-item>
+      <ion-icon item-start>
+        <img class="start_img" src="./assets/icon/other.png">
+      </ion-icon>
+      <h3 class='myf_medium'>{{other.role}}</h3>
+      <p class="item_pp myf_light">{{other.organization}}</p>
+      <p class="item_pp myf_light">{{other.startdate | date:'MMM yyyy'}} - {{other.enddate | date:'MMM yyyy'}}</p>
+      <p class="item_pp myf_light">{{other.focusArea}}</p>
+      <ion-icon item-end (click)="goNext(i)">
+        <img class="end_img" src="./assets/icon/edit.png">
+      </ion-icon>
+    </ion-item>
+    <hr no-margin margin-left margin-right>
+  </ion-list>
+</ion-content>

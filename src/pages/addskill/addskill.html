@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-title text-center class='myf_medium'>Skills </ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only class="my_header_icon" (click)="goBack()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content text-center class="masters">
+  <p>&nbsp;</p>
+  <div margin>
+    <span class='myf_medium'>Add Skills</span>
+  </div>
+  <div margin style="border:1px solid #dbdbdb" (click)="goNext()">
+    <ion-input type="text" placeholder="Enter skills" class='myf_regular'></ion-input>
+  </div>
+  <p>&nbsp;</p>
+  <div>
+    <ion-label class='myf_semibold'> OR </ion-label>
+  </div>
+  <p>&nbsp;</p>
+  <div margin>
+    <button ion-button block class="linked myf_regular">Import from LinkedIn</button>
+  </div>
+</ion-content>

@@ -1,0 +1,360 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+@font-face {
+  font-family: 'SF-Light';
+  src: url('../assets/fonts/SF-UI-Display-Light.otf');
+}
+@font-face {
+  font-family: 'SF-Medium';
+  src: url('../assets/fonts/SF-UI-Display-Medium.otf');
+}
+@font-face {
+  font-family: 'SF-Regular';
+  src: url('../assets/fonts/SF-UI-Display-Regular.otf');
+}
+@font-face {
+  font-family: 'SF-Semibold';
+  src: url('../assets/fonts/SF-UI-Display-Semibold.otf');
+}
+@font-face {
+  font-family: 'SF-T-Regular';
+  src: url('../assets/fonts/SF-UI-Text-Regular.otf');
+}
+@font-face {
+  font-family: 'SF-T-Medium';
+  src: url('../assets/fonts/SF-UI-Text-Medium.otf');
+}
+@font-face {
+  font-family: 'SF-T-Semibold';
+  src: url('../assets/fonts/SF-UI-Text-Semibold.otf');
+}
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+@import "ionic.globals";
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+.myf_semibold {
+  font-family: 'SF-Semibold' !important;
+}
+.myf_light {
+  font-family: 'SF-Light' !important;
+}
+.myf_medium {
+  font-family: 'SF-Medium' !important;
+}
+.myf_regular {
+  font-family: 'SF-Regular' !important;
+}
+.myft_regular {
+  font-family: 'SF-T-Regular' !important;
+}
+.myft_medium {
+  font-family: 'SF-T-Medium' !important;
+}
+.myft_semibold {
+  font-family: 'SF-T-Semibold' !important;
+}
+
+.btn_close {
+  margin: 0px!important;
+  padding: 0px!important;
+  position: absolute!important;
+  top: 22px;
+  left:16px;
+  ion-icon {
+    font-size: 30px;
+    color: black;
+  }
+}
+.my_header_icon {
+  margin: 0px 6px!important;
+}
+.card_h {
+  font-size: 14px!important;
+  color: #6f6f6f!important;
+}
+.card_c {
+  p {
+    font-size: 12px!important;
+    color: #6f6f6f!important;
+  }  
+}
+.input_div {
+  p {
+    font-size: 14px;
+  }
+  input::placeholder {
+    color: #d8d8d8!important;
+  }
+  input {
+    color: #7a7a7a!important;
+  }
+}
+.input_div1 {
+  padding: 0;
+  padding-right: 8px;
+}
+.input_div2 {
+  padding: 0;
+  padding-left: 8px;
+}
+.my_search {
+  input {
+    line-height: normal!important;
+    background-color: #fff!important;
+    font-family: 'SF-T-Regular' !important;
+  }
+  .searchbar-search-icon {
+    top: 6px!important;
+  }
+}
+.masters {
+  .scroll-content {
+    overflow-y: overlay!important;
+  }
+  .scroll-content::-webkit-scrollbar {
+    display: none;
+  }
+}
+.rightImageIcon{
+  margin: 0px 10px 0px 4px !important;
+  float:right;
+  img {
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 30px;
+    height: 30px;
+  }
+}
+.leftImageIcon {
+  margin: 0px 4px 0px 10px !important;
+  width: 25px;
+  height: 25px;
+}
+.btn_save {
+  color: #fff;
+  text-align: center;
+  background-color: #ffcd00;
+  width: 100%;
+}
+.btn_delete {
+  color: red;
+  text-align: center;
+}
+.linked {
+  background-color:#0E76A8!important;
+  color: white!important;
+  text-transform: none!important;
+  width: 100%!important;
+  text-align: center!important;
+}
+.plus_div {
+  font-size: 16px;
+  color: black;
+  hr {
+    background-color: black!important;
+    margin: 0px!important;
+  }
+  ion-icon {
+    float: right;
+  }
+  ion-icon:before {
+    color: black;
+    font-size: 25px;
+  }
+}
+.footer_btn_act {
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  p {
+    font-size: 10px!important;
+    color: black!important;
+    margin: 0px!important;
+  }
+}
+.footer_btn {
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  p {
+    font-size: 10px!important;
+    color: #616161!important;
+    margin: 0px!important;
+  }
+}
+.item_pp {
+  color: #a2a2a2!important;
+}
+ion-input .text-input {
+  margin: 16px 20px!important;
+  padding: 0;
+  width: calc(100% - 20px - 20px)!important;
+}
+.ion_input1 .text-input {
+  margin: 6px 12px!important;
+  padding: 0;
+  width: calc(100% - 12px - 12px)!important;
+}
+.span_name {
+  display: flex;
+  div {
+    color: #202020!important;
+    font-size:16px!important;
+  }
+  .imagestar3 {
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+  }
+  .imagestar4 {
+    width: auto;
+    height: 5px;
+    margin-top: 8px;
+    margin-left: auto!important;
+  }
+}
+.imagestar5 {
+  font-size: 14px!important;
+  color: #a2a2a2!important;
+  margin-top: 6px!important;
+}
+.suggestion {
+  color: #7a7a7a!important;
+  text-transform: capitalize;
+  margin-left: 8px;
+  font-size: 13px!important;
+}
+.suggestionimg {
+  height: 20px;
+  width: auto!important;
+}
+.like_p {
+  color:#7a7a7a!important;
+  font-size:13px!important;
+}
+.list-ios .item-block .item-inner, .item-ios.item-block .item-inner {
+  border: 0px!important;
+}
+ion-footer {
+  border-top: 1px #d0d0d0 solid!important;
+}
+
+//------------ common scss for signoption , signup , signin and register Page
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+}
+.caption {
+  display: block;
+  font-size: 25px;
+  top:0px;
+}
+.signin-input-border
+{
+  border-top: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  input::placeholder {
+    color: #d8d8d8!important;
+  }
+}
+.border-bottom{
+  border-bottom: 1px solid #dbdbdb;
+}
+.signin{
+  color: white;
+  text-align: center;
+  width: 98%;
+}
+
+//-------------------========================================
+
+.searchbar .searchbar-input {
+  border-radius: 5px !important;
+  box-shadow:  none !important;
+}
+.item-md.item-block .item-inner {
+  padding-right: none !important;
+  border-bottom:  none !important;
+}
+//---------------------------===================================
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #ffcd00,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  navbarColor:white
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

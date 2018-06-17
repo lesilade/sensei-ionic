@@ -1,0 +1,50 @@
+page-profile {
+  .masters {
+    background-color: #fafafa;
+  }
+  .profile_img {
+    margin-left: 40%;
+    margin-top: 16px;
+    border-radius: 50%;
+    border: 5px #fff solid;
+  }
+  .my_card {
+    margin: 16px;
+    width: calc(100% - 32px);
+    ion-card-content, ion-card-header {
+      padding: 13px 16px;
+    }
+  }
+  .profile_batch img {
+    width: 20px;
+  }
+  .profile_edit img {
+    width: 20px;
+    float: right;
+  }
+  .progress-outer {
+    width: calc(100% - 52px);
+    height: 10px;
+    margin-top: 3px;
+    background-color: #DAD8D8;
+    border-radius: 20px;
+    .progress-inner {
+      width: 70%;
+      height: 10px;
+      border-radius: 20px;
+      background-color: map-get($colors, primary);
+    }
+  }
+  .third_row {
+    height: 16px;
+    margin-top: 10px;
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .editimg{
+    width:16px;
+    float:right;
+  }
+}

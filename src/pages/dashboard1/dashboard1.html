@@ -1,0 +1,135 @@
+<ion-header no-border>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only class="leftImageIcon" (click)="goToMessage()">
+        <img src="./assets/icon/leftIcon.png" />
+      </button>
+    </ion-buttons>
+    <ion-searchbar class="my_search" placeholder="Search..." (click)="goToSearch()"></ion-searchbar>
+    <ion-buttons right>
+      <button ion-button icon-only class="rightImageIcon" (click)="goToProfile()">
+        <img src="./assets/icon/rightIcon.png" />
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class='masters'>
+<div>
+  <ion-segment [(ngModel)]="pet">
+    <ion-segment-button value="coach">
+      Coach
+    </ion-segment-button>
+    <ion-segment-button value="request">
+      Request for a coach
+    </ion-segment-button>
+  </ion-segment>
+</div>
+<div [ngSwitch]="pet">
+  <ion-list *ngSwitchCase="'coach'">
+    <div margin class="dash_div" [hidden]="coach.pending.length==0">
+      <h5 padding no-margin class="myf_regular">Pending Request</h5>
+      <hr no-margin>
+      <div margin *ngFor="let req of coach.pending; let i = index">
+        <p style="font-size:14px;" class="myf_medium">{{req.requestName}}</p>
+        <ion-item margin-top padding-bottom no-padding (click)="showRequest(req)">
+          <ion-avatar item-start>
+            <img src="./assets/icon/img1.jpg">
+          </ion-avatar>
+          <ion-avatar item-end>
+            <img src="./assets/icon/tick.png" class="img6">
+            <img src="./assets/icon/cross.png" class="img7">
+          </ion-avatar>
+          <span class="myf_medium span_name"><div>{{req.caochingRequest.user.firstName}} {{req.caochingRequest.user.lastName}}</div><img src="./assets/icon/star{{req.user.id}}.png" class="imagestar3"></span>
+          <p class="imagestar5 myf_regular">{{req.caochingRequest.user.email}}</p>
+          <p class="imagestar4 myf_regular"><img src="./assets/icon/time.png"/>{{req.caochingRequest.duration}} Weeks</p>
+          <p class="imagestar4 myf_regular"><img src="./assets/icon/point.png"/>{{req.user.point}}</p>
+        </ion-item>
+        <hr no-margin [hidden]="coach.pending.length==(i+1)">
+      </div>
+    </div>
+    <div margin class="dash_div" [hidden]="coach.current.length==0">
+      <h5 padding no-margin class="myf_regular">Current Sessions</h5>
+      <hr no-margin>
+      <div margin *ngFor="let req of coach.current; let i = index">
+        <p style="font-size:14px;" class="myf_medium">{{req.requestName}}</p>
+        <ion-item margin-top padding-bottom no-padding>
+          <ion-avatar item-start>
+            <img src="./assets/icon/img1.jpg">
+          </ion-avatar>
+          <span class="myf_medium span_name"><div>{{req.caochingRequest.user.firstName}} {{req.caochingRequest.user.lastName}}</div><img src="./assets/icon/star{{req.user.id}}.png" class="imagestar3"></span>
+          <p class="imagestar5 myf_regular">{{req.caochingRequest.user.email}}</p>
+          <p class="imagestar4 myf_regular"><img src="./assets/icon/time.png"/>{{req.caochingRequest.duration}} Weeks</p>
+          <p class="imagestar8 myf_regular"><img src="./assets/icon/roundrect2.png" class="z1" /><img src="./assets/icon/progressbar1.png" class="z2" />Completion</p>
+        </ion-item>
+        <hr no-margin [hidden]="coach.pending.length==(i+1)">
+      </div>
+    </div>
+  </ion-list>
+  <ion-list *ngSwitchCase="'request'">
+    <div margin class="dash_div" [hidden]="request.status==1">
+      <h5 padding no-margin class="myf_regular">Pending Request</h5>
+      <hr no-margin>
+      <div margin *ngFor="let req of request; let i = index">
+        <p style="font-size:14px;" class="myf_medium">{{req.topic}}</p>
+        <ion-item margin-top padding-bottom no-padding>
+          <ion-avatar item-start>
+            <img src="./assets/icon/img1.jpg">
+          </ion-avatar>
+          <span class="myf_medium span_name"><div>{{req.user.firstName}} {{req.user.lastName}}</div><img src="./assets/icon/star{{req.user.id}}.png" class="imagestar3"></span>
+          <p class="imagestar5 myf_regular">{{req.user.email}}</p>
+          <p class="imagestar4 myf_regular"><img src="./assets/icon/time.png"/> 24 Hours</p>
+          <p class="imagestar4 myf_regular"><img src="./assets/icon/point.png"/> {{req.user.point}}</p>
+        </ion-item>
+        <hr no-margin [hidden]="request.length==(i+1)">
+      </div>
+    </div>
+   <div margin class="dash_div" [hidden]="request.status==0">
+      <h5 padding no-margin class="myf_regular">Current Sessions</h5>
+      <hr no-margin>
+      <div margin *ngFor="let req of requestCurrent; let i = index">
+        <p style="font-size:14px;" class="myf_medium">{{req.title}}</p>
+        <ion-item margin-top padding-bottom no-padding>
+          <ion-avatar item-start>
+            <img src="./assets/icon/img1.jpg">
+          </ion-avatar>
+          <span class="myf_medium span_name"><div>{{req.user.firstName}} {{req.user.lastName}}</div><img src="./assets/icon/star{{req.user.id}}.png" class="imagestar3"></span>
+          <p class="imagestar5 myf_regular">{{req.user.email}}</p>
+          <p class="imagestar4 myf_regular"><img src="./assets/icon/time.png"/> 24 Hours</p>
+          <p class="imagestar4 myf_regular"><img src="./assets/icon/point.png"/> {{req.user.point}}</p>
+        </ion-item>
+        <hr no-margin [hidden]="request.length==(i+1)">
+      </div>
+    </div> 
+  </ion-list>
+</div>
+</ion-content>
+<ion-footer>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goHome()">
+          <img src="./assets/icon/homeIcon1.png">
+          <p class='myf_regular'>Home</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToRequest()">
+          <img src="./assets/icon/requestIcon1.png">
+          <p class='myf_regular'>Request</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn_act">
+          <img src="./assets/icon/dashboardIcon.png">
+          <p class='myf_semibold'>Dashboard</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToConnection()">
+          <img src="./assets/icon/connectionIcon1.png">
+          <p class='myf_regular'>Connections</p>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

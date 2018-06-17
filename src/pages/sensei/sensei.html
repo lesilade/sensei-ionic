@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only class="my_header_icon" (click)="goToDashboard()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center class='myf_regular'>Sensei</ion-title>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+  <div margin class="dash_div">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="./assets/icon/img1.jpg">
+      </ion-avatar>
+      <span class="myf_medium span_name"><div>{{request.user.firstName}} {{request.user.lastName}}</div><img src="./assets/icon/star{{request.user.id}}.png" class="imagestar3"></span>
+      <p class='myf_regular imagestar5'>{{request.user.email}}</p>
+    </ion-item>
+    <hr no-margin>
+    <div padding>
+      <p class="title myf_regular">What topic do you need a coach for?</p>
+      <p class="text myf_regular">{{request.caochingRequest.topic}}</p>
+      <p class="title myf_regular">Subtopic?</p>
+      <p class="text myf_regular">{{request.caochingRequest.subtopic}}</p>
+      <p class="title myf_regular">Which Industry?</p>
+      <p class="text myf_regular">{{request.caochingRequest.industry}}</p>
+      <p class="title myf_regular">Describe what you need the coach for?</p>
+      <p class="text myf_regular">{{request.caochingRequest.description}}</p>
+    </div>
+  </div>
+  <div margin padding class="dash_div">
+    <p class="title myf_regular">Time: <span class="text myf_medium">{{request.caochingRequest.duration}} weeks</span></p>
+    <p class="text myf_regular">Estimated impact on your rating:</p>
+    <ion-card class='my_card'>
+      <ion-card-content>
+        <ion-grid no-padding>
+          <ion-row class='third_row'>
+            <img src="./assets/icon/star8.png" style="margin-right:10px;">
+            <div class="progress-outer">
+              <img src="./assets/icon/progressbar.png" class="progress-inner">
+            </div>
+            <img src="./assets/icon/star1.png" style="margin-left:10px;">
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ion-row text-center>
+      <ion-col no-padding>
+        <p class="z_p" (click)="accept()"><img src="./assets/icon/tick.png"><span class="myf_regular" >Accept</span></p>
+      </ion-col>
+      <ion-col no-padding>
+        <p class="z_p" (click)="decline()"><img src="./assets/icon/cross.png"><span class="myf_regular" >Decline</span></p>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goHome()">
+          <img src="./assets/icon/homeIcon1.png">
+          <p class='myf_regular'>Home</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToRequest()">
+          <img src="./assets/icon/requestIcon1.png">
+          <p class='myf_regular'>Request</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn_act">
+          <img src="./assets/icon/dashboardIcon.png">
+          <p class='myf_semibold'>Dashboard</p>
+        </a>
+      </ion-col>
+      <ion-col>
+        <a class="has-title has-icon footer_btn" (click)="goToConnection()">
+          <img src="./assets/icon/connectionIcon1.png">
+          <p class='myf_regular'>Connections</p>
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

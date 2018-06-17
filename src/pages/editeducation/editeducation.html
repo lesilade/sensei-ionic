@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton="true">
+    <ion-title text-center class='myf_regular'>Edit education</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack()">
+        <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right style="width:40px;">
+      <button ion-button icon-only class="my_header_icon">
+        <ion-icon name="ios-arrow-dropleft-outline" style="display:none;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="masters">
+  <div class='plus_div'>
+    <div margin class='myf_regular'>
+      Add your recent education
+      <ion-icon name="ios-add-circle-outline" item-end></ion-icon>
+    </div>
+    <hr>
+  </div>
+  <div margin>
+    <div class="input_div">
+      <p class="myft_regular">School</p>
+      <div margin-top style="border:1px solid #dbdbdb">
+        <ion-input type="text" placeholder="Enter school name" value='{{education.school}}' class="myft_regular ion_input1"></ion-input>
+      </div>
+    </div>
+    <div class="input_div">
+      <p class="myft_regular">Degree</p>
+      <div margin-top style="border:1px solid #dbdbdb">
+        <ion-input type="text" placeholder="e.g Bachelor" value='{{education.degree}}' class="myft_regular ion_input1"></ion-input>
+      </div>
+    </div>
+    <div class="input_div">
+      <p class="myft_regular">Major area of study</p>
+      <div margin-top style="border:1px solid #dbdbdb">
+        <ion-input type="text" placeholder="e.g Philosophy" value='{{education.majorareaofstudy}}' class="myft_regular ion_input1"></ion-input>
+      </div>
+    </div>
+    <div class="input_div">
+      <p class="myft_regular">Minor area of study</p>
+      <div margin-top style="border:1px solid #dbdbdb">
+        <ion-input type="text" placeholder="Optional" value='{{education.minorareaofstudy}}' class="myft_regular ion_input1"></ion-input>
+      </div>
+    </div>
+    <ion-row>
+      <ion-col class='input_div input_div1'>
+        <p class="myft_regular">Start</p>
+        <div margin-top style="border:1px solid #dbdbdb">
+          <ion-input type="text" placeholder="Enter MM/YY" value='{{education.startdate}}' class="myft_regular ion_input1"></ion-input>
+        </div>
+      </ion-col>
+      <ion-col class='input_div input_div2'>
+        <p class="myft_regular">Expected Grad</p>
+        <div margin-top style="border:1px solid #dbdbdb">
+          <ion-input type="text" placeholder="Enter MM/YY" value='{{education.enddate}}' class="myft_regular ion_input1"></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class='input_div'>
+      </ion-col>
+      <ion-col class='input_div input_div2'>
+        <ion-item>
+          <ion-label class="myf_regular">Current</ion-label>
+          <ion-toggle color="secondary" checked='{{education.current}}'></ion-toggle>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div margin>
+    <button ion-button class="btn_save myf_regular" (click)="goNext()">Save</button>
+  </div>
+  <div margin class="btn_delete myf_regular">
+    Delete
+  </div>
+</ion-content>

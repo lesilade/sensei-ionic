@@ -1,0 +1,28 @@
+page-signin {
+  .masters {
+    background-color:#ffffff;
+    text-align:center;
+  }
+  .grid_signin {
+  	width:90%;
+  	text-align:center;
+  }
+  .col_signin {
+  	background-color:#d8d8d8;
+  	ion-icon {
+  		color:#828282;
+  		margin:14px 10px 0px 10px;
+  		font-size:30px;
+  	}
+  }
+  .label_forgot {
+  	text-align:right;
+  	margin-right:5%;
+  }
+  .btn_signin {
+    color:white;
+    text-align:center;
+    text-transform: none;
+    width: 90%;
+  }
+}
